@@ -1,1 +1,11 @@
-<p>course-list works!</p>
+<div class="container">
+  <h2>Available Courses</h2>
+  <div class="grid">
+    <div *ngFor="let course of courses" class="card">
+      <h3>{{ course.title }}</h3>
+      <p>Category: {{ course.category }}</p>
+      <p>Seats: {{ course.seats > 0 ? course.seats : 'Sold Out' }}</p>
+      <button [disabled]="course.seats === 0">Enroll Now</button>
+    </div>
+  </div>
+</div>
