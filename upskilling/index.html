@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>react-app</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Community Event Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { background-color: #f9f9f9; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        window.onbeforeunload = function() {
+            return "Are you sure you want to leave?";
+        };
+    </script>
+</head>
+<body>
+
+    <header id="mainHeader">
+        <h1 style="color: red;">Community Portal</h1>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#welcome">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="help.html" target="_blank">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="welcomeBanner">
+        <h2>Welcome back to the portal!</h2>
+        <p>Grab our <span style="color: red; font-weight: bold;">special offer</span> early.</p>
+        <p class="highlight">Don't miss out!</p>
+    </div>
+
+    <section id="bulletin">
+        <h2>Community News</h2>
+        <div class="news-article">
+            <p>We are thrilled to announce this year's lineup of community events. Join us at the downtown park for music, food, and games. Everyone is welcome to participate and bring their families along for the fun.</p>
+            <p>Volunteers are also needed for upcoming clean-up drives. It's a great way to give back and earn community service hours. Register early as slots fill up fast!</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Past Events</h2>
+        <table>
+            <tr>
+                <th>Event</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <td>Music Fest</td>
+                <td>Oct 10</td>
+            </tr>
+            <tr>
+                <td>Art Expo</td>
+                <td>Oct 15</td>
+            </tr>
+        </table>
+
+        <br>
+        <table>
+            <tr>
+                <td>
+                    <img src="https://picsum.photos/100" alt="Pic 1" title="Pic 1" class="gallery-img">
+                    <p>Park Day</p>
+                </td>
+                <td>
+                    <img src="https://picsum.photos/100" alt="Pic 2" title="Pic 2" class="gallery-img">
+                    <p>Baking</p>
+                </td>
+                <td>
+                    <img src="https://picsum.photos/100" alt="Pic 3" title="Pic 3" class="gallery-img">
+                    <p>Marathon</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="https://picsum.photos/100" alt="Pic 4" title="Pic 4" class="gallery-img">
+                    <p>Tech</p>
+                </td>
+                <td>
+                    <img src="https://picsum.photos/100" alt="Pic 5" title="Pic 5" class="gallery-img">
+                    <p>Art</p>
+                </td>
+                <td>
+                    <img src="https://picsum.photos/100" alt="Pic 6" title="Pic 6" class="gallery-img">
+                    <p>Music</p>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="dynamic-events">
+        <h2>Upcoming Events</h2>
+        <input type="text" id="searchEvents" placeholder="Quick search..." onkeydown="console.log('Search key:', event.key)">
+        <select id="eventCategoryFilter">
+            <option value="all">All</option>
+            <option value="music">Music</option>
+            <option value="tech">Tech</option>
+        </select>
+        
+        <div id="spinner" style="display:none;">Loading events from server...</div>
+        <div id="eventListContainer"></div>
+        <button id="loadEventsBtn">Load More</button>
+    </section>
+
+    <section id="register">
+        <h2>Register</h2>
+        <form id="regForm">
+            <input type="text" name="userName" placeholder="Full Name" required autofocus class="highlight-input">
+            <input type="email" name="userEmail" placeholder="Email" required>
+            <input type="date" name="userDate" required>
+            <select name="eventType" required id="regEventType">
+                <option value="">Select Event</option>
+                <option value="workshop">Workshop</option>
+                <option value="concert">Concert</option>
+            </select>
+            <textarea name="userMessage" placeholder="Requests" onkeyup="document.getElementById('charCount').innerText = this.value.length"></textarea>
+            <p><span id="charCount">0</span> characters</p>
+            <button type="submit">Submit</button>
+            <output id="formOutput"></output>
+        </form>
+    </section>
+
+    <section id="tools">
+        <h2>Tools</h2>
+        <button onclick="getLocation()">Find Nearby Events</button>
+        <p id="locOutput"></p>
+
+        <select id="prefEvent" onchange="localStorage.setItem('pref', this.value)">
+            <option value="music">Music</option>
+            <option value="sports">Sports</option>
+        </select>
+        <button onclick="localStorage.clear(); sessionStorage.clear(); alert('Preferences wiped')">Clear Saved</button>
+
+        <br><br>
+        <input type="tel" id="phoneValidate" placeholder="Phone (blur test)" onblur="if(this.value.length < 10) alert('Invalid phone')">
+        
+        <br><br>
+        <img src="https://picsum.photos/150" alt="Double Click Me" ondblclick="this.style.width='300px'" width="150" class="gallery-img">
+        
+        <br><br>
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls oncanplay="document.getElementById('vidStatus').innerText = 'Video ready to play'"></video>
+        <p id="vidStatus">Loading video...</p>
+    </section>
+    
+    <div id="jqBox" class="hidden-box" style="width:100px; height:100px; background:lightblue;">Hidden Box</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
