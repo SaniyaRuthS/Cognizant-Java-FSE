@@ -1,0 +1,1 @@
+package com.cts.handson.repository;import org.springframework.data.jpa.repository.JpaRepository;import com.cts.handson.entity.Country;public interface CountryRepository extends JpaRepository<Country,String>{}

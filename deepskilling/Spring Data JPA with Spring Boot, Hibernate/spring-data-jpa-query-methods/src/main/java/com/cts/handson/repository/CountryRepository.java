@@ -1,0 +1,1 @@
+package com.cts.handson.repository;import java.util.*;import org.springframework.data.jpa.repository.JpaRepository;import com.cts.handson.entity.Country;public interface CountryRepository extends JpaRepository<Country,String>{Country findByCode(String code);List<Country> findByNameContaining(String name);List<Country> findByNameStartingWith(String prefix);}
