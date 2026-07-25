@@ -1,0 +1,58 @@
+.course-card {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-header h3 {
+  font-size: 1.15rem;
+  color: #003366;
+}
+
+.course-code, .course-credits {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.details-section {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.btn-enroll {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-details {
+  background-color: #6c757d;
+  color: white;
+}

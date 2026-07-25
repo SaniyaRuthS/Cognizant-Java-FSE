@@ -1,0 +1,24 @@
+<div class="container detail-container">
+  <button (click)="goBack()" class="btn btn-back">&larr; Back to Courses</button>
+
+  <div *ngIf="course; else notFoundOrLoading" class="detail-card">
+    <h2>{{ course.name }} ({{ course.code }})</h2>
+    <p><strong>Credits:</strong> {{ course.credits | creditLabel }}</p>
+    <p><strong>Grade Status:</strong> <span class="badge" [ngClass]="'badge-' + course.gradeStatus">{{ course.gradeStatus }}</span></p>
+
+    <div class="students-section">
+      <h3>Enrolled Students (Loaded via switchMap)</h3>
+      <ul *ngIf="enrolledStudents.length > 0; else noStudents">
+        <li *ngFor="let s of enrolledStudents">{{ s.name }} ({{ s.email }})</li>
+      </ul>
+      <ng-template #noStudents>
+        <p>No students enrolled yet.</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <ng-template #notFoundOrLoading>
+    <p *ngIf="errorMessage" class="error-text">{{ errorMessage }}</p>
+    <p *ngIf="!errorMessage">Loading course details...</p>
+  </ng-template>
+</div>

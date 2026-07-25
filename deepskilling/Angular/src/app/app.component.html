@@ -1,0 +1,9 @@
+<div *ngIf="isLoading$ | async" class="spinner-overlay">
+  <div class="spinner"></div>
+</div>
+
+<app-header></app-header>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,57 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Data Structures & Algorithms",
+      "code": "CS101",
+      "credits": 4,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": 2,
+      "name": "Web Development with Angular",
+      "code": "CS202",
+      "credits": 3,
+      "gradeStatus": "pending"
+    },
+    {
+      "id": 3,
+      "name": "Database Management Systems",
+      "code": "CS303",
+      "credits": 4,
+      "gradeStatus": "passed"
+    },
+    {
+      "id": 4,
+      "name": "Software Engineering Principles",
+      "code": "CS404",
+      "credits": 2,
+      "gradeStatus": "failed"
+    },
+    {
+      "id": 5,
+      "name": "Cloud Computing Architecture",
+      "code": "CS505",
+      "credits": 3,
+      "gradeStatus": "pending"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "enrolledCourseIds": [1, 3]
+    }
+  ],
+  "enrollments": [
+    {
+      "id": 1,
+      "studentName": "John Doe",
+      "studentEmail": "john.doe@example.com",
+      "courseId": 1,
+      "preferredSemester": "Odd",
+      "agreeToTerms": true
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.ng-invalid.ng-touched {
+  border-color: #d9534f !important;
+}
+
+.ng-valid.ng-touched {
+  border-color: #5cb85c !important;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.badge-passed {
+  background-color: #28a745;
+}
+
+.badge-failed {
+  background-color: #dc3545;
+}
+
+.badge-pending {
+  background-color: #6c757d;
+}
+
+.card--enrolled {
+  background-color: #eef9f1;
+  border: 1px solid #28a745;
+}
+
+.card--full {
+  font-weight: 600;
+  border-width: 2px;
+}
+
+.expanded {
+  height: auto !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.error-text {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.success-banner {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px solid #c3e6cb;
+}
+
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
